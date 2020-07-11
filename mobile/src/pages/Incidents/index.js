@@ -53,7 +53,7 @@ export default function Incidents(){
         </Text>
       </View>
 
-      <Text style={styles.title}>Bem-vindo!</Text>
+      <Text style={styles.title}>{ loading  ? 'carregando...' : ''}</Text>
       <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia.</Text>
 
       <FlatList 
@@ -62,7 +62,7 @@ export default function Incidents(){
         keyExtractor={incident => String(incident.id)}
         onEndReached={loadIncidents}
         onEndReachedThreshold={0.2}
-        showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={true}
         renderItem={({ item: incident }) => (
           <View style={styles.incident}>
             <Text style={styles.incidentProperty}>ONG:</Text>
